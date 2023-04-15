@@ -1,6 +1,6 @@
 import { Api } from './../models/api.model';
 import { ReqresService } from '../services/reqres.service';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 
 @Component({
@@ -13,7 +13,7 @@ import { IonicModule } from '@ionic/angular';
 export class HomePage {
   retornoApi: Api[] = [];
 
-  constructor(private reqres: ReqresService) {}
+  constructor(private reqres: ReqresService) { }
 
   getAllUsers() {
     this.reqres.getAll().subscribe(dados => {
