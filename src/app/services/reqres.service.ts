@@ -1,3 +1,4 @@
+import { User } from './../models/user.model';
 import { Api } from './../models/api.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -6,15 +7,27 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ReqresService {
-  users: Api[] = [];
-
   url: string = 'https://reqres.in/api/users';
 
   constructor(private http: HttpClient) { }
 
   getAll() {
-    this.http.get<Api[]>(this.url).subscribe((user) => {
-      this.users = user;
-    })
+    return this.http.get<Api[]>(this.url);
+  }
+
+  create(user: User) {
+    return this.http.post(this.url, user);
+  }
+
+  getOne(id: number) {
+    return this.http.get<Api>(`${this.url}/${id}`);
+  }
+
+  update(user: User, id: number) {
+    return this.http.put(`${this.url}/${id}`, user);
+  }
+
+  delete(id: number) {
+    return this.http.delete(`${this.http}/${id}`);
   }
 }
