@@ -7,7 +7,7 @@ export class Api {
   total_pages?: number;
   data?: User[];
   support?: {
-    url: "https://reqres.in/#support-heading",
-    text: "To keep ReqRes free, contributions towards server costs are appreciated!"
+    url: string,
+    text: string
   }
 }
