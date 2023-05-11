@@ -1,3 +1,4 @@
+import { RouterLink } from '@angular/router';
 import { Component } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 import { HttpClientModule } from '@angular/common/http'
@@ -7,7 +8,7 @@ import { HttpClientModule } from '@angular/common/http'
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
   standalone: true,
-  imports: [IonicModule, HttpClientModule],
+  imports: [IonicModule, HttpClientModule, RouterLink],
 })
 export class AppComponent {
   constructor() {}
