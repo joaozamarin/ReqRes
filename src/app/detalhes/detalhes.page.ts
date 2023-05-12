@@ -35,4 +35,15 @@ export class DetalhesPage implements OnInit {
   editar(id: number) {
     this.router.navigateByUrl(`/update/${id}`);
   }
+
+  excluir() {
+    if(confirm('Deseja excluir este Usuário?')) {
+      this.reqResService.delete(this.id).subscribe((dados) => {
+        alert(`Usuário ${this.user.first_name} ${this.user.last_name} excluido com sucesso!!!`);
+        console.log(dados)
+
+        this.router.navigateByUrl('/home');
+      })
+    }
+  }
 }

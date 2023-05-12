@@ -39,8 +39,8 @@ export class ReqresService {
     );
   }
 
-  delete(id: number) {
-    return this.http.delete(`${this.http}/${id}`);
+  delete(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.url}/${id}`);
   }
 
   exibirErro(erro: any): Observable<any> {
