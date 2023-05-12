@@ -27,4 +27,8 @@ export class HomePage implements OnInit{
       this.retornoApi = dados.data;
     })
   }
+
+  detalhes(id: number) {
+    this.router.navigateByUrl(`/detalhes/${id}`);
+  }
 }

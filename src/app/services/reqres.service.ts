@@ -20,7 +20,7 @@ export class ReqresService {
     return this.http.post(this.url, user);
   }
 
-  getOne(id: number) {
+  getOne(id: number): Observable<User> {
     return this.http.get<Api>(`${this.url}/${id}`).pipe(
       map((retorno) => retorno.data),
       catchError((erro) => this.exibirErro(erro))

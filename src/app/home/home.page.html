@@ -12,7 +12,7 @@
   <ion-grid>
     <ion-row>
       <ion-col size="6" *ngFor="let user of retornoApi">
-        <ion-card>
+        <ion-card (click)="detalhes(user.id)">
           <img alt="Silhouette of mountains" src="{{user.avatar}}" style="width: 100%;" />
           <ion-card-header>
             <ion-card-title>{{user.first_name}} {{user.last_name}}</ion-card-title>

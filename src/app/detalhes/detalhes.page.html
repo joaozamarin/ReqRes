@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Detalhes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row class="ion-align-items-start">
+      <ion-col>
+        <img style="width: 100%;" src="{{user.avatar}}" alt="">
+      </ion-col>
+      <ion-col>
+        <div>
+          <h3>Nome</h3>
+          {{user.first_name}} {{user.last_name}}
+        </div>
+        <div>
+          <h3>Email</h3>
+          {{user.email}}
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="full">Editar</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="full" color="danger">Excluir</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
