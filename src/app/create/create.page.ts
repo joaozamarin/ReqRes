@@ -36,8 +36,9 @@ export class CreatePage implements OnInit {
 
     this.reqResService.create(user).subscribe((dados) => {
       alert(`Usuário ${dados.name} cadastrado com sucesso!!!`);
-
       console.log(dados);
+
+      this.router.navigateByUrl('/home');
     })
   }
 

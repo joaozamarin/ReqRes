@@ -1,5 +1,5 @@
 import { ReqresService } from './../services/reqres.service';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -20,7 +20,8 @@ export class DetalhesPage implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private reqResService: ReqresService
+    private reqResService: ReqresService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -29,5 +30,9 @@ export class DetalhesPage implements OnInit {
     this.reqResService.getOne(this.id).subscribe((dados) => {
       this.user = dados;
     })
+  }
+
+  editar(id: number) {
+    this.router.navigateByUrl(`/update/${id}`);
   }
 }
