@@ -1,4 +1,3 @@
-import { Api } from './../models/api.model';
 import { ReqresService } from './../services/reqres.service';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Component, OnInit } from '@angular/core';

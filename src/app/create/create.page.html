@@ -1,13 +1,21 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>create</ion-title>
+    <ion-title>Criar Usuário</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">create</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-input label="Nome" label-placement="floating" type="text" fill="outline" placeholder="Nome" [(ngModel)]="name">
+  </ion-input>
+
+  <br>
+
+  <ion-input label="Profissão" label-placement="floating" fill="outline" type="text" placeholder="Profissão"
+    [(ngModel)]="job"></ion-input>
+
+  <br>
+
+  <ion-button (click)="salvar()" expand="full">
+    Criar
+  </ion-button>
 </ion-content>
